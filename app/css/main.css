@@ -1,2 +1,30 @@
+.field-group {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
 
+.field-invalid {
+  display: none;
+  width: 100%;
+  color: #dc3545;
+  text-align: center;
+}
+
+.field-invalid--conditions {
+  text-align: left;
+  font-size: 15px;
+}
+
+.form-control:not(#male) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
 /*# sourceMappingURL=main.css.map */

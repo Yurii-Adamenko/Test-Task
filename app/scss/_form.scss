@@ -1,0 +1,27 @@
+.field {
+  &-group {
+    position: relative;
+    display: flex;
+    width: 100%;
+  }
+  &-invalid {
+    display: none;
+    width: 100%;
+    color: $color-danger;
+    text-align: center;
+    &--conditions {
+      text-align: left;
+      font-size: 15px;
+    }
+  }
+}
+
+.form-control:not(#male) {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}

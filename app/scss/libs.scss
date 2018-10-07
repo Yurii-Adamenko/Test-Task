@@ -1,1 +1,3 @@
-// @import ""; указываю путь к файлу css но расширение .css указывать не нужно
+@import "app/libs/normalize-css/normalize";
+@import "app/libs/bootstrap/dist/css/bootstrap.min";
+@import "app/libs/components-font-awesome/css/fontawesome-all.min";

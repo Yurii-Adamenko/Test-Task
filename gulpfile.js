@@ -44,7 +44,7 @@ gulp.task('sass', function(){
   .pipe(browserSync.reload({stream: true}))
 });
 
-gulp.task('scripts', function() {
+gulp.task('scripts-libs', function() {
   return gulp.src([
     'app/libs/jquery/dist/jquery.min.js',
     'app/libs/bootstrap/dist/js/bootstrap.bundle.min.js',
@@ -55,9 +55,17 @@ gulp.task('scripts', function() {
   .pipe(gulp.dest('app/js'))
 });
 
-gulp.task('css-libs', ['sass'], function(){
-  return gulp.src('app/libs/bootstrap/dist/css/bootstrap.min.css')
-  .pipe(concat('libs.css'))
+gulp.task('scripts-min', function() {
+  return gulp.src([
+    'app/js/form.js'
+  ])
+  .pipe(concat('main.min.js'))
+  .pipe(uglify())
+  .pipe(gulp.dest('app/js'))
+});
+
+gulp.task('css-libs', ['sass'], function() {
+  return gulp.src('app/css/libs.css')
   .pipe(cssnano())
   .pipe(rename({suffix: '.min'}))
   .pipe(gulp.dest('app/css'))
@@ -106,7 +114,7 @@ gulp.task('img', function() {
   .pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('watch', ['browser-sync', 'sass', 'compile', 'css-libs', 'scripts'], function() {
+gulp.task('watch', ['browser-sync', 'sass', 'compile', 'scripts-min', 'css-libs', 'scripts-libs'], function() {
   gulp.watch('app/scss/**/*.scss', ['compile']).on('change', browserSync.reload);
   gulp.watch('app/**/*.html', browserSync.reload);
   gulp.watch('app/js/**/*.js', browserSync.reload);
