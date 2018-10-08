@@ -1,4 +1,4 @@
-//файл отвечает за валидацию формы
+// файл отвечает за валидацию формы
 'use strict';
 
 $(document).ready(function() {
@@ -72,24 +72,27 @@ $(document).ready(function() {
         //если сервер вернул статус отличный от "ОК", то выводим текст ошибки
         if(formResult.status !== 'OK') {
 
+          //если есть ошибка относится к конкретному полю, выводим ошибку под этим полем
           if(formResult.field) {
             fieldServer(fieldName);
             fieldServer(fieldSecondName);
             fieldServer(fieldEmail);
             fieldServer(fieldPassword);
           } else {
-
-            //если сервер не вернул поле, выводим ошибку вначале формы
+            // если сервер не вернул поле, выводим ошибку вначале формы
             $('form').prepend('<div class="field-invalid" style="margin-bottom: 10px">' + formResult.message + '</div>');
             $('form .field-invalid:first').slideDown('fast');
+            // удалить все предыдущие поля с ошибками в этой области, кроме того, что мы только что создали
+            $('form').children('.field-invalid').remove('.field-invalid:not(.field-invalid:first)');
           }
 
-        //если сервер вернул статус "ОК", то переъодим на страницу компаний
+        //если сервер вернул статус "ОК", то переходим на страницу компаний
         } else {
-          window.location.href = 'https://www.google.com.ua'
+          window.location.href = '../app/companies.html'
         }
 
       });  
     }
   });
+
 });

@@ -1,0 +1,64 @@
+.card-body {
+  height: 220px;
+}
+
+.sumCompanies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+.bodyTotal {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listCompanies {
+  overflow-y: auto;
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-left: 0;
+  border-radius: 0.25em;
+}
+
+.list-group-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  &:first-child {
+    border-top: 0;
+    border-top-right-radius: 0;
+  }
+  &:last-child {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.bodyLocation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+//Graph
+.graphContainer {
+  position: relative;
+  height: 210px;
+}
+
+.graphPlaceholder {
+  width: 100%;
+  height: 100%;
+}
+
+#graph {
+  width: 210px;
+}

@@ -1,0 +1,203 @@
+.preloader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+#floatingCirclesG {
+  position: relative;
+  margin: auto;
+  width: 83px;
+  height: 83px;
+  -webkit-transform: scale(0.6);
+  -ms-transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+.f_circleG {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 8px;
+  background-color: white;
+  -webkit-animation-name: f_fadeG;
+  animation-name: f_fadeG;
+  -webkit-animation-duration: 1.04s;
+  animation-duration: 1.04s;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+  animation-direction: normal;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+}
+
+#frotateG_01 {
+  top: 34px;
+  left: 0;
+  -webkit-animation-delay: 0.39s;
+  animation-delay: 0.39s;
+}
+
+#frotateG_02 {
+  top: 10px;
+  left: 10px;
+  -webkit-animation-delay: 0.52s;
+  animation-delay: 0.52s;
+}
+
+#frotateG_03 {
+  top: 0;
+  left: 34px;
+  -webkit-animation-delay: 0.65s;
+  animation-delay: 0.65s;
+}
+
+#frotateG_04 {
+  top: 10px;
+  right: 10px;
+  -webkit-animation-delay: 0.78s;
+  animation-delay: 0.78s;
+}
+
+#frotateG_05 {
+  top: 34px;
+  right: 0;
+  -webkit-animation-delay: 0.91s;
+  animation-delay: 0.91s;
+}
+
+#frotateG_06 {
+  right: 10px;
+  bottom: 10px;
+  -webkit-animation-delay: 1.04s;
+  animation-delay: 1.04s;
+}
+
+#frotateG_07 {
+  bottom: 0;
+  left: 34px;
+  -webkit-animation-delay: 1.17s;
+  animation-delay: 1.17s;
+}
+
+#frotateG_08 {
+  bottom: 10px;
+  left: 10px;
+  -webkit-animation-delay: 1.3s;
+  animation-delay: 1.3s;
+}
+
+@keyframes f_fadeG {
+  0% {
+    background-color: #120da3;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+@-webkit-keyframes f_fadeG {
+  0% {
+    background-color: #120da3;
+  }
+
+  100% {
+    background-color: white;
+  }
+}
+
+.card-body {
+  height: 220px;
+}
+
+.sumCompanies {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150px;
+  height: 150px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  font-size: 32px;
+}
+
+.bodyTotal {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.listCompanies {
+  overflow-y: auto;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: 0;
+  border-radius: 0.25em;
+}
+
+.list-group-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.list-group-item:first-child {
+  border-top: 0;
+  border-top-right-radius: 0;
+}
+
+.list-group-item:last-child {
+  border-bottom: 0;
+  border-bottom-right-radius: 0;
+}
+
+.bodyLocation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0;
+}
+
+.graphContainer {
+  position: relative;
+  height: 210px;
+}
+
+.graphPlaceholder {
+  width: 100%;
+  height: 100%;
+}
+
+#graph {
+  width: 210px;
+}
+/*# sourceMappingURL=companies.css.map */
