@@ -82,7 +82,7 @@ gulp.task('browser-sync', function() {
   browserSync({
     server: {
       baseDir: 'app',
-      // index: "companies.html"
+      index: "companies.html"
     },
     notify: false
   });
@@ -123,6 +123,7 @@ gulp.task('img', function() {
     })))
   .pipe(gulp.dest('dist/img'));
 });
+
 
 gulp.task('watch', ['browser-sync', 'sass', 'compile', 'css-libs', 'scripts-libs', 'scripts-min-companies', 'scripts-min-form'], function() {
   gulp.watch('app/scss/**/*.scss', ['compile']).on('change', browserSync.reload);

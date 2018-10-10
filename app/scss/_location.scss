@@ -1,0 +1,22 @@
+.bodyLocation {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+//Graph
+.graphContainer {
+  position: relative;
+  height: 210px;
+}
+
+.graphPlaceholder {
+  width: 100%;
+  height: 100%;
+}
+
+#graph {
+  width: 210px;
+}

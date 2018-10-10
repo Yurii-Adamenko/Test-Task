@@ -1,0 +1,130 @@
+.listCompanies {
+  overflow-y: auto;
+  height: 100%;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-left: 0;
+  border-radius: 0.25em;
+}
+
+.list-group-item {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  &:first-child {
+    border-top: 0;
+    border-top-right-radius: 0;
+  }
+  &:last-child {
+    border-bottom: 0;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.partners {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  height: 270px;
+  &Block {
+    display: none;
+  }
+  &List {
+    position: absolute;
+    top: 20%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 220px;
+    list-style-type: none;
+    transform: rotate(-90deg);
+  }
+  &Item {
+    position: relative;
+    margin: 10px;
+    margin-left: 0;
+    padding: 10px 15px 15px;
+    width: 75%;
+    border: 2px solid #000;
+    border-right: 0;
+    background-color: $color-bgc-partner;
+    color: #fa5757;
+    white-space: nowrap;
+    font-size: 22px;
+    &:after {
+      position: absolute;
+      top: 10%;
+      left: 86%;
+      z-index: -1;
+      width: 46px;
+      height: 46px;
+      border: 2px solid #000;
+      border-radius: 4px;
+      background-color: $color-bgc-partner;
+      content: "";
+      transform: rotate(45deg);
+    }
+  }
+  &Percent {
+    position: absolute;
+    top: 3%;
+    left: 110%;
+    z-index: -2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: $color-bgc-partner-perc;
+    color: #fff;
+    font-size: 20px;
+
+    writing-mode: tb-rl;
+  }
+}
+
+.sort {
+  &Content {
+    padding: 0 10px;
+  }
+  &Btn {
+    position: relative;
+    overflow: hidden;
+    width: 13px;
+    height: 10px;
+    color: #c0b9b9;
+    cursor: pointer;
+    &Block {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+      font-size: 22px;
+    }
+    &Up {
+      margin-bottom: 5px;
+    }
+    &Down {
+      // background-color: blue;
+      &:before {
+        position: absolute;
+        top: -11px;
+      }
+    }
+    &Active {
+      color: #403d3d;
+    }
+  }
+}
+.exit {
+  margin-left: 20px;
+  &Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+  }
+}
