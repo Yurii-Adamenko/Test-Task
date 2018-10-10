@@ -1,5 +1,6 @@
 body {
   overflow-y: scroll;
+  background-color: lighten($colorCardHeaderText, 60%);
 }
 
 a {
@@ -9,8 +10,17 @@ a {
   }
 }
 
-.card-body {
-  height: 220px;
+.card {
+  border-color: $colorCardBorder;
+  &-body {
+    height: 220px;
+    background-color: $colorCardBody;
+  }
+  &-header {
+    border-color: $colorCardBorder;
+    background-color: $colorCardHeader;
+    color: $colorCardHeaderText;
+  }
 }
 
 .bodyTotal {
@@ -28,5 +38,8 @@ a {
   height: 150px;
   border: 2px solid #000;
   border-radius: 50%;
+  background-color: $colorBgcSumComp;
+  color: $colorRed;
+  font-weight: bold;
   font-size: 32px;
 }

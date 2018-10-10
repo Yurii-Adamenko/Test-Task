@@ -50,7 +50,8 @@ gulp.task('scripts-libs', function() {
     'app/libs/bootstrap/dist/js/bootstrap.bundle.min.js',
     'app/libs/bootstrap/dist/js/bootstrap.min.js',
     'app/libs/Flot/jquery.flot.js',
-    'app/libs/Flot/jquery.flot.pie.js'
+    'app/libs/Flot/jquery.flot.pie.js',
+    'app/libs/moment/min/moment.min.js'
   ])
   .pipe(concat('libs.min.js'))
   .pipe(uglify())

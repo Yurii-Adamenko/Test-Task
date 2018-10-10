@@ -47,8 +47,8 @@
     width: 75%;
     border: 2px solid #000;
     border-right: 0;
-    background-color: $color-bgc-partner;
-    color: #fa5757;
+    background-color: $colorBgcPartner;
+    color: $colorRed;
     white-space: nowrap;
     font-size: 22px;
     &:after {
@@ -60,7 +60,7 @@
       height: 46px;
       border: 2px solid #000;
       border-radius: 4px;
-      background-color: $color-bgc-partner;
+      background-color: $colorBgcPartner;
       content: "";
       transform: rotate(45deg);
     }
@@ -77,7 +77,7 @@
     height: 55px;
     border: 2px solid #000;
     border-radius: 50%;
-    background-color: $color-bgc-partner-perc;
+    background-color: $colorBgcPartnerPerc;
     color: #fff;
     font-size: 20px;
 

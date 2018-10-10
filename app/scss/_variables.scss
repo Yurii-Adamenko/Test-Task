@@ -1,3 +1,9 @@
-$color-danger: #dc3545;
-$color-bgc-partner-perc: #6c5ef2;
-$color-bgc-partner: #ecf833;
+$colorDanger: #dc3545;
+$colorRed: #fa5757;
+$colorCardHeader: #f5fe6a;
+$colorCardHeaderText: #10a308;
+$colorCardBody: lighten($colorCardHeader, 25%);
+$colorCardBorder: #3d0082;
+$colorBgcPartnerPerc: #6c5ef2;
+$colorBgcPartner: #ecf833;
+$colorBgcSumComp: #8cf3ff;

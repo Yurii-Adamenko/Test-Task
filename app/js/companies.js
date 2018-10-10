@@ -60,6 +60,8 @@ $(document).ready(function() {
         // Скрываем блок "Company partners"
         $('.exit').on('click', function() {
           $('.partnersBlock').slideUp('slow');
+          // что б при нажатии на кнопку страница не обновлялась
+          return false;
         });
 
         var partners = [],
@@ -231,6 +233,39 @@ $(document).ready(function() {
 
       // как записались данные в блок "Companies by Location", прячем на нем прелоадер
       hidePreloader($('.preloaderLocation'));
+
+    } else {
+      location.reload(true);
+    };
+
+  });
+
+  // получаем данные новостей с сервера
+  $.getJSON('http://codeit.pro/codeitCandidates/serverFrontendTest/news/getList', function(newsList) {
+
+    if(newsList.status == 'OK') {
+
+      $(newsList.list).each(function(i, news) {
+
+        // форматируем дату в нужный вид
+        var date = new Date(news.date * 1000);
+        date = moment(date).format("DD.MM.YYYY");
+
+        // добавляем индикаторы слайдера
+        $('.carousel-indicators').append('<li data-target="#carouselIndicators" data-slide-to="' + i + '"></li>');
+
+        // добавляем элементы слайдера
+        // заметка: картинки строем с помощью background что б центровать их, вне зависимости от размера полученой картинки. К тому же так лучше при использовании CMS
+        $('.carousel-inner').append('<div class="carousel-item"><div class="newsContent"><div class="newsMedia"><div class="newsImage"><div style="background-image: url(' + news.img.replace(/"/g,'') + ')"></div></div><div class="newsAuthor"><span>Author:</span>' + news.author + '</div><div class="newsPublic"><span>Public:</span>' + date + '</div></div><div class="newsText"><a href=' + news.link + '><span class="newsTitle">Title</span></a><p class="newsDescription">' + news.description + '</p></div></div></div>');
+
+      });
+
+      // первому индикатору и элементу слайдера добавляем класс('active'), что б слайдер работал
+      $('.carousel-indicators li:first-child').addClass('active');
+      $('.carousel-item:first-child').addClass('active');
+
+      // когда слайдер построился, прячем прелоадер
+      hidePreloader($('.preloaderNews'));
 
     } else {
       location.reload(true);
