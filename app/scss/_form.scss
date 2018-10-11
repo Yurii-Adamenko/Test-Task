@@ -1,13 +1,33 @@
+body {
+  background-color: $colorBody;
+}
+
+.card {
+  border-color: $colorCardBorder;
+  &-body {
+    background-color: $colorCardBody;
+  }
+  &-header {
+    border-color: $colorCardBorder;
+    background-color: $colorCardHeader;
+    color: $colorWhite;
+  }
+}
+
 .field {
   &-group {
     position: relative;
     display: flex;
     width: 100%;
+    span {
+      background-color: $colorBgcSumComp;
+      color: $colorWhite;
+    }
   }
   &-invalid {
     display: none;
     width: 100%;
-    color: $colorDanger;
+    color: $colorRed;
     text-align: center;
     &--conditions {
       text-align: left;

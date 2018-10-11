@@ -38,7 +38,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      background: #bdb6b6 no-repeat center;
+      background: $colorIndicators no-repeat center;
       background-size: cover;
     }
   }
@@ -79,9 +79,9 @@
 
 .carousel-indicators {
   li {
-    background-color: #f8a16c;
+    background-color: $colorIndicators;
   }
   & .active {
-    background-color: #df230a;
+    background-color: $colorBlack;
   }
 }

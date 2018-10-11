@@ -1,9 +1,15 @@
-$colorDanger: #dc3545;
-$colorRed: #fa5757;
-$colorCardHeader: #f5fe6a;
-$colorCardHeaderText: #10a308;
-$colorCardBody: lighten($colorCardHeader, 25%);
+//main colors
+$colorBody: #d1eeff;
+$colorWhite: #fff;
+$colorBlack: #000;
+$colorRed: #dc3545;
+//card colors
 $colorCardBorder: #3d0082;
-$colorBgcPartnerPerc: #6c5ef2;
-$colorBgcPartner: #ecf833;
-$colorBgcSumComp: #8cf3ff;
+$colorCardHeader: #495efa;
+$colorCardBody: lighten($colorCardHeader, 32%);
+//color partners
+$colorBgcPartner: #6c5ef2;
+$colorBgcPartnerPerc: darken($colorBgcPartner, 10%);
+//other colors
+$colorIndicators: #b5b3b2;
+$colorBgcSumComp: #8abcfa;

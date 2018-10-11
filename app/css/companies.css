@@ -13,6 +13,10 @@
   background-color: #fff;
 }
 
+.preloaderNews {
+  z-index: 20;
+}
+
 #floatingCirclesG {
   position: relative;
   margin: auto;
@@ -119,7 +123,7 @@
 
 body {
   overflow-y: scroll;
-  background-color: #e1fde0;
+  background-color: #d1eeff;
 }
 
 a {
@@ -136,13 +140,13 @@ a:hover {
 
 .card-body {
   height: 220px;
-  background-color: #feffe9;
+  background-color: #e8ebfe;
 }
 
 .card-header {
   border-color: #3d0082;
-  background-color: #f5fe6a;
-  color: #10a308;
+  background-color: #495efa;
+  color: #fff;
 }
 
 .bodyTotal {
@@ -172,9 +176,8 @@ a:hover {
   height: 150px;
   border: 2px solid #000;
   border-radius: 50%;
-  background-color: #8cf3ff;
-  color: #fa5757;
-  font-weight: bold;
+  background-color: #8abcfa;
+  color: #fff;
   font-size: 32px;
 }
 
@@ -183,7 +186,7 @@ a:hover {
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-left: 0;
-  border-radius: 0.25em;
+  border-radius: 4px;
 }
 
 .list-group-item {
@@ -235,8 +238,8 @@ a:hover {
   width: 75%;
   border: 2px solid #000;
   border-right: 0;
-  background-color: #ecf833;
-  color: #fa5757;
+  background-color: #6c5ef2;
+  color: #fff;
   white-space: nowrap;
   font-size: 22px;
 }
@@ -250,7 +253,7 @@ a:hover {
   height: 46px;
   border: 2px solid #000;
   border-radius: 4px;
-  background-color: #ecf833;
+  background-color: #6c5ef2;
   content: "";
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
@@ -275,7 +278,7 @@ a:hover {
   height: 55px;
   border: 2px solid #000;
   border-radius: 50%;
-  background-color: #6c5ef2;
+  background-color: #412fee;
   color: #fff;
   font-size: 20px;
   -webkit-writing-mode: tb-rl;
@@ -292,7 +295,7 @@ a:hover {
   overflow: hidden;
   width: 13px;
   height: 10px;
-  color: #c0b9b9;
+  color: #b5b3b2;
   cursor: pointer;
 }
 
@@ -319,7 +322,7 @@ a:hover {
 }
 
 .sortBtnActive {
-  color: #403d3d;
+  color: #000;
 }
 
 .exit {
@@ -354,6 +357,15 @@ a:hover {
   padding: 0;
 }
 
+.pieLabel {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.pieLabel div:hover {
+  text-decoration: underline;
+}
+
 .graphContainer {
   position: relative;
   height: 210px;
@@ -364,8 +376,43 @@ a:hover {
   height: 100%;
 }
 
+.graphList {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-left: 0;
+  border-radius: 4px;
+}
+
+.graphListContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  margin: 20px;
+}
+
+.graphBack {
+  position: absolute;
+  right: 20px;
+  display: none;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.graphBack:hover {
+  color: #bbd8fc;
+}
+
 #graph {
   width: 210px;
+}
+
+#graph span:nth-of-type(3) {
+  left: -5px !important;
 }
 
 .newsBody {
@@ -427,7 +474,7 @@ a:hover {
   right: 0;
   bottom: 0;
   left: 0;
-  background: #bdb6b6 no-repeat center;
+  background: #b5b3b2 no-repeat center;
   background-size: cover;
 }
 
@@ -473,10 +520,10 @@ a:hover {
 }
 
 .carousel-indicators li {
-  background-color: #f8a16c;
+  background-color: #b5b3b2;
 }
 
 .carousel-indicators .active {
-  background-color: #df230a;
+  background-color: #000;
 }
 /*# sourceMappingURL=companies.css.map */

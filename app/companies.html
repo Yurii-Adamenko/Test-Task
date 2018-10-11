@@ -6,7 +6,7 @@
   <title>Companies</title>
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="libs/components-font-awesome/css/fontawesome-all.min.css">
-  <link rel="stylesheet" href="css/companies.min.css">
+  <link rel="stylesheet" href="css/companies.css">
 </head>
 <body>
 
@@ -67,7 +67,8 @@
       </div>
 
     </div>
-
+    
+    <!-- Блок Company Partners -->
     <div class="row partnersBlock mt-4">
       <div class="col-10 offset-1">
         <div class="card">
@@ -110,8 +111,9 @@
       <!-- Блок «Companies by Location»  -->
       <div class="col-5 offset-1">
         <div class="card">
-          <div class="card-header text-center font-weight-bold">
+          <div class="card-header text-center font-weight-bold position-relative">
             Companies by Location
+            <i class="graphBack fas fa-arrow-alt-circle-left"></i>
           </div>
           <div class="card-body bodyLocation">
             <!-- Прелоадер -->
@@ -129,6 +131,11 @@
             </div>
             <div class="graphContainer">
               <div id="graph" class="graphPlaceholder mx-auto"></div>
+            </div>
+            <div class="graphListContainer">
+              <ul class="list-group graphList">
+                <!-- <li class="list-group-item">Cras justo odio</li> -->
+              </ul>
             </div>
           </div>
         </div>
@@ -165,6 +172,6 @@
   </div>
 
   <script src="js/libs.min.js"></script>
-  <script src="js/companies.min.js"></script>
+  <script src="js/companies.js"></script>
 </body>
 </html>

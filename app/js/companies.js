@@ -1,5 +1,7 @@
 'use strict';
 
+var listCompanies = [];
+
 $(document).ready(function() {
 
   // убирает прелоадер
@@ -27,11 +29,10 @@ $(document).ready(function() {
 
   // получаем данные компаний с сервера
   $.getJSON('http://codeit.pro/codeitCandidates/serverFrontendTest/company/getList', function(companies) {
-    
+
     if(companies.status == 'OK') {
 
-      var listCompanies = [],
-          sumCountries  = {},
+      let sumCountries  = {},
           listCountries = [];
 
       // записываем количество компаний в блок "Total Companies"
@@ -51,6 +52,10 @@ $(document).ready(function() {
 
       // нажали на компанию в списке
       $('.listCompanies ul a').on('click', function() {
+        
+        let partners    = [],
+            nameCompany = $(this);
+
         // отменяем работу <a>
         event.preventDefault();
         // очищаем список партнеров, которые уже были
@@ -64,9 +69,6 @@ $(document).ready(function() {
           return false;
         });
 
-        var partners = [],
-            nameCompany = $(this);
-
         // выделяем элемент списка на который нажали
         if($('.listCompanies ul a').hasClass('active')) {
           $('.listCompanies ul a').removeClass('active');
@@ -75,7 +77,7 @@ $(document).ready(function() {
           $(this).addClass('active');
         };
 
-        //формируем список партнеров компании, на которую нажали
+        // формируем список партнеров компании, на которую нажали
         $(listCompanies).each(function() {
           if(this.name === nameCompany.text()) {
             partners = partners.concat(this.partners)
@@ -206,7 +208,7 @@ $(document).ready(function() {
         return nameCountry;
       }, {});
 
-      //строит круговою диаграмму
+      // строит круговою диаграмму
       $(function() {
         // переменная хранит данные для постройки графика
         var data = [];
@@ -234,6 +236,7 @@ $(document).ready(function() {
       // как записались данные в блок "Companies by Location", прячем на нем прелоадер
       hidePreloader($('.preloaderLocation'));
 
+    // если не получили данные, перезагружаем страницу
     } else {
       location.reload(true);
     };
@@ -245,6 +248,7 @@ $(document).ready(function() {
 
     if(newsList.status == 'OK') {
 
+      // стром слайдер по получим данным 
       $(newsList.list).each(function(i, news) {
 
         // форматируем дату в нужный вид
@@ -255,7 +259,7 @@ $(document).ready(function() {
         $('.carousel-indicators').append('<li data-target="#carouselIndicators" data-slide-to="' + i + '"></li>');
 
         // добавляем элементы слайдера
-        // заметка: картинки строем с помощью background что б центровать их, вне зависимости от размера полученой картинки. К тому же так лучше при использовании CMS
+        // заметка: картинки строем с помощью background, что б центровать их вне зависимости от размера полученой картинки. К тому же так лучше при использовании CMS
         $('.carousel-inner').append('<div class="carousel-item"><div class="newsContent"><div class="newsMedia"><div class="newsImage"><div style="background-image: url(' + news.img.replace(/"/g,'') + ')"></div></div><div class="newsAuthor"><span>Author:</span>' + news.author + '</div><div class="newsPublic"><span>Public:</span>' + date + '</div></div><div class="newsText"><a href=' + news.link + '><span class="newsTitle">Title</span></a><p class="newsDescription">' + news.description + '</p></div></div></div>');
 
       });
@@ -274,3 +278,46 @@ $(document).ready(function() {
   });
 
 });
+
+//когда окно загрузилось, можем работать с элементами круговой диаграммы (ниже идет работа с этой диаграмой)
+$(window).on('load', function() {
+  
+  // нажали на страну
+  $('.pieLabel').on('click', function() {
+
+    // с нажатой страны на диаграмме взяли текст и оставили только название страны 
+    var nameCountry = $(this).text();
+    nameCountry = nameCountry.replace(/\d.*/, '');
+
+    // берем компании, которые относятся к нажатой стране и строим список
+    $(listCompanies).each(function() {
+      if(nameCountry == this.location.name) {
+        $('.graphList').append('<li class="list-group-item">' + this.name + '</li>');
+      }
+
+    });
+
+    // для коректного отображения при разной величине списка, вносим в него небольшие визуальные изменения
+    if($('.graphList li').length <= 4) {
+      $('.graphList').css({'height':'inherit', 'border-right':'0'});
+    }
+
+    // прячем график, показываем список и кнопку "назад"
+    $('.graphContainer').hide();
+    $('.graphBack').show();
+    $('.graphListContainer').show();
+
+    // при клике на кнопку "назад", возвращаем все в диаграмме к начальным значениям
+    $('.graphBack').on('click', function() {
+      $(this).hide();
+      $('.graphListContainer').hide();
+      $('.graphContainer').show();
+      $('.graphList li').remove();
+      $('.graphList').css({'height':'100%', 'border-right':'inherit'});
+    });
+
+  });
+
+});
+
+

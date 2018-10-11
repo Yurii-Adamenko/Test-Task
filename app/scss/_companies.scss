@@ -1,6 +1,6 @@
 body {
   overflow-y: scroll;
-  background-color: lighten($colorCardHeaderText, 60%);
+  background-color: $colorBody;
 }
 
 a {
@@ -19,7 +19,7 @@ a {
   &-header {
     border-color: $colorCardBorder;
     background-color: $colorCardHeader;
-    color: $colorCardHeaderText;
+    color: $colorWhite;
   }
 }
 
@@ -36,10 +36,9 @@ a {
   justify-content: center;
   width: 150px;
   height: 150px;
-  border: 2px solid #000;
+  border: 2px solid $colorBlack;
   border-radius: 50%;
   background-color: $colorBgcSumComp;
-  color: $colorRed;
-  font-weight: bold;
+  color: $colorWhite;
   font-size: 32px;
 }
