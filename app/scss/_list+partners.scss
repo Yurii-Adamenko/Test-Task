@@ -24,6 +24,18 @@
   overflow-x: auto;
   overflow-y: hidden;
   height: 270px;
+  &Header {
+    display: flex;
+    justify-content: space-between;
+    @media only screen and (max-width: 576px) {
+      flex-direction: column;
+      span {
+        display: block;
+        padding-bottom: 10px;
+        text-align: center;
+      }
+    }
+  }
   &Block {
     display: none;
   }
@@ -88,6 +100,14 @@
 .sort {
   &Content {
     padding: 0 10px;
+    @media only screen and (max-width: 576px) {
+      padding: 0 5px;
+    }
+  }
+  &Panel {
+    @media only screen and (max-width: 576px) {
+      justify-content: center;
+    }
   }
   &Btn {
     position: relative;
@@ -119,6 +139,9 @@
 }
 .exit {
   margin-left: 20px;
+  @media only screen and (max-width: 576px) {
+    margin-left: 5px;
+  }
   &Btn {
     display: flex;
     align-items: center;

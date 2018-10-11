@@ -211,6 +211,15 @@ a:hover {
   height: 270px;
 }
 
+.partnersHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .partnersBlock {
   display: none;
 }
@@ -525,5 +534,34 @@ a:hover {
 
 .carousel-indicators .active {
   background-color: #000;
+}
+
+@media only screen and (max-width: 576px) {
+  .partnersHeader {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .partnersHeader span {
+    display: block;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .sortContent {
+    padding: 0 5px;
+  }
+
+  .sortPanel {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .exit {
+    margin-left: 5px;
+  }
 }
 /*# sourceMappingURL=companies.css.map */

@@ -32,7 +32,7 @@ $(document).ready(function() {
 
     if(companies.status == 'OK') {
 
-      let sumCountries  = {},
+      var sumCountries  = {},
           listCountries = [];
 
       // записываем количество компаний в блок "Total Companies"
@@ -53,7 +53,7 @@ $(document).ready(function() {
       // нажали на компанию в списке
       $('.listCompanies ul a').on('click', function() {
         
-        let partners    = [],
+        var partners    = [],
             nameCompany = $(this);
 
         // отменяем работу <a>

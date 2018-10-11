@@ -88,7 +88,7 @@ $(document).ready(function() {
 
         //если сервер вернул статус "ОК", то переходим на страницу компаний
         } else {
-          window.location.href = '../app/companies.html'
+          window.location.href = 'companies.html'
         }
 
       });  

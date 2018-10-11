@@ -34,10 +34,10 @@ gulp.task('sass', function(){
     return 'File: ' + error.message;
   })))
   .pipe(gcmq())
-  .pipe(autoprefixer(['last 5 versions', '> 1%'], { cascade: true }))
+  .pipe(autoprefixer(['last 5 versions', '> 1%'], { cascade: false }))
   .pipe(notify({
     message: 'Compiled!',
-    sound: false
+    sound: true
   }))
   .pipe(sourcemaps.write('./'))
   .pipe(gulp.dest('app/css'))
@@ -83,7 +83,7 @@ gulp.task('browser-sync', function() {
   browserSync({
     server: {
       baseDir: 'app',
-      index: "companies.html"
+      // index: "companies.html"
     },
     notify: false
   });
