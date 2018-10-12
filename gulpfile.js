@@ -132,15 +132,22 @@ gulp.task('watch', ['browser-sync', 'sass', 'compile', 'css-libs', 'scripts-libs
   gulp.watch('app/js/**/*.js', browserSync.reload);
 });
 
-gulp.task('build', ['clean', 'img', 'sass', 'minify', 'scripts'], function() {
+gulp.task('build', ['clean', 'img', 'sass', 'minify'], function() {
 
-  var buildCss = gulp.src(['app/css/main.min.css','app/css/libs.min.css'])
+  var buildCss = gulp.src([
+                            'app/css/companies.min.css',
+                            'app/css/form.min.css',
+                            'app/css/libs.min.css'
+                          ])
   .pipe(gulp.dest('dist/css'))
 
-  var buildFonts = gulp.src('app/fonts/**/*')
-  .pipe(gulp.dest('dist/fonts'))
+  var buildFontAwesome = gulp.src('app/libs/components-font-awesome/webfonts/*')
+  .pipe(gulp.dest('dist/webfonts'))
 
-  var buildJs = gulp.src('app/js/**/*')
+  var buildJs = gulp.src([
+                          'app/js/companies.min.js',
+                          'app/js/form.min.js',
+                          'app/js/libs.min.js'])
   .pipe(gulp.dest('dist/js'))
 
   var buildHtml = gulp.src('app/*.html')

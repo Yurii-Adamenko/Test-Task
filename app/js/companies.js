@@ -277,47 +277,47 @@ $(document).ready(function() {
 
   });
 
-});
+  // Нажимать на название страны в диаграмме можно только когда браузер достроит DOM-дерево, для этого скрипт, отвечающий за взаимодействие с этими элементами я задерживаю, дабы с этими элементами можно было взаимодействовать
+  function activeGraph(){
 
-//когда окно загрузилось, можем работать с элементами круговой диаграммы (ниже идет работа с этой диаграмой)
-$(window).on('load', function() {
-  
-  // нажали на страну
-  $('.pieLabel').on('click', function() {
+    // нажали на страну в круговой диаграмме
+    $('.pieLabel').on('click', function() {
 
-    // с нажатой страны на диаграмме взяли текст и оставили только название страны 
-    var nameCountry = $(this).text();
-    nameCountry = nameCountry.replace(/\d.*/, '');
+      // с нажатой страны взяли текст и оставили только название страны 
+      var nameCountry = $(this).text();
+      nameCountry = nameCountry.replace(/\d.*/, '');
 
-    // берем компании, которые относятся к нажатой стране и строим список
-    $(listCompanies).each(function() {
-      if(nameCountry == this.location.name) {
-        $('.graphList').append('<li class="list-group-item">' + this.name + '</li>');
+      // берем компании, которые относятся к нажатой стране и строим из них список
+      $(listCompanies).each(function() {
+        if(nameCountry == this.location.name) {
+          $('.graphList').append('<li class="list-group-item">' + this.name + '</li>');
+        }
+
+      });
+
+      // для коректного отображения при разной величине списка, вносим в него небольшие визуальные изменения
+      if($('.graphList li').length <= 4) {
+        $('.graphList').css({'height':'inherit', 'border-right':'0'});
       }
 
+      // прячем график, показываем список и кнопку "назад"
+      $('.graphContainer').hide();
+      $('.graphBack').show();
+      $('.graphListContainer').show();
+
+      // при клике на кнопку "назад", возвращаем всё в диаграмме к начальным значениям
+      $('.graphBack').on('click', function() {
+        $(this).hide();
+        $('.graphListContainer').hide();
+        $('.graphContainer').show();
+        $('.graphList li').remove();
+        $('.graphList').css({'height':'100%', 'border-right':'inherit'});
+      });
+
     });
 
-    // для коректного отображения при разной величине списка, вносим в него небольшие визуальные изменения
-    if($('.graphList li').length <= 4) {
-      $('.graphList').css({'height':'inherit', 'border-right':'0'});
-    }
+  };
 
-    // прячем график, показываем список и кнопку "назад"
-    $('.graphContainer').hide();
-    $('.graphBack').show();
-    $('.graphListContainer').show();
-
-    // при клике на кнопку "назад", возвращаем все в диаграмме к начальным значениям
-    $('.graphBack').on('click', function() {
-      $(this).hide();
-      $('.graphListContainer').hide();
-      $('.graphContainer').show();
-      $('.graphList li').remove();
-      $('.graphList').css({'height':'100%', 'border-right':'inherit'});
-    });
-
-  });
+  setTimeout(activeGraph, 1000);
 
 });
-
-
